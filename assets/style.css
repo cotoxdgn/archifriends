@@ -1,0 +1,96 @@
+/* Layout: 手描きの「窓」を積み重ねるROOMin流。1カラム中心、窓の中だけ2列 */
+:root{
+  --paper:#f1ece2; --win:#fbf8f2; --ink:#2b2924; --sub:#6b655a;
+  --oak:#a8703c; --olive:#66704a; --line:#2b2924; --mute:#e4ddcf;
+  --font:'BIZ UDPGothic','Hiragino Sans','Yu Gothic',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1e1c19; --win:#28251f; --ink:#ece5d8; --sub:#a9a193;
+  --oak:#d39a62; --olive:#a3ae80; --line:#ece5d8; --mute:#38342c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1e1c19; --win:#28251f; --ink:#ece5d8; --sub:#a9a193;
+  --oak:#d39a62; --olive:#a3ae80; --line:#ece5d8; --mute:#38342c; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-weight:400;
+  font-size:15px;line-height:1.85;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-weight:700;margin:0;text-wrap:balance;line-height:1.4}
+p{margin:0}
+
+/* preview notice */
+.notice{display:none;border:1.5px dashed var(--oak);color:var(--oak);font-size:12px;padding:8px 12px;border-radius:6px;line-height:1.6}
+
+/* header */
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:26px;font-weight:700;letter-spacing:.04em;text-decoration:none}
+.logo small{font-size:11px;font-weight:400;color:var(--sub);margin-left:8px;letter-spacing:.12em}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{font-size:12px;letter-spacing:.1em;text-decoration:none;padding:4px 10px;border:1.5px solid transparent;border-radius:14px 10px 13px 9px}
+nav a[aria-current="page"]{border-color:var(--line);background:var(--win);font-weight:700}
+nav a:hover{border-color:var(--line)}
+nav a:focus-visible,.btn:focus-visible{outline:2px solid var(--oak);outline-offset:2px}
+nav a.later{color:var(--sub)}
+nav a.later::after{content:" ·4月";font-size:10px}
+
+/* window */
+.win{background:var(--win);border:2px solid var(--line);
+  border-radius:7px 11px 6px 10px / 10px 6px 11px 7px;box-shadow:4px 4px 0 var(--line);min-width:0}
+.bar{display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--line);padding:6px 12px;font-size:11px;letter-spacing:.12em;color:var(--sub)}
+.dots{display:flex;gap:5px}.dots i{width:9px;height:9px;border:1.5px solid var(--line);border-radius:50%}
+.dots i:first-child{background:var(--oak)}
+.bar .url{flex:1;min-width:0;border:1.5px solid var(--mute);border-radius:10px;padding:0 10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.body{padding:22px 20px 24px;display:flex;flex-direction:column;gap:16px}
+
+.hero h1{font-size:clamp(26px,6vw,40px)}
+.hero .lead{color:var(--sub);max-width:34em}
+.tag{display:inline-block;font-size:11px;letter-spacing:.1em;border:1.5px solid var(--line);border-radius:10px 8px 11px 7px;padding:1px 9px}
+.tag.oak{background:var(--oak);color:var(--win);border-color:var(--oak)}
+.tag.later{border-style:dashed;color:var(--oak);border-color:var(--oak)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.sec-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-title h2{font-size:20px}
+.sec-title span{font-size:11px;letter-spacing:.16em;color:var(--sub)}
+
+.post{display:flex;flex-direction:column;gap:6px;text-decoration:none;padding:14px 0;border-bottom:1.5px dashed var(--mute)}
+.post:last-child{border-bottom:0}
+.post h3{font-size:16px}
+.post:hover h3{text-decoration:underline;text-underline-offset:4px}
+.meta{font-size:12px;color:var(--sub)}
+
+.tool,.tool-win .body{display:flex;flex-direction:column;gap:10px}
+.tool h3,.tool-win h3{font-size:17px}
+.tool p,.tool-win .body p{font-size:14px;color:var(--sub)}
+.swatch{height:96px;border:1.5px solid var(--line);border-radius:6px 9px 5px 8px;
+  background:repeating-linear-gradient(90deg,var(--mute) 0 18px,transparent 18px 22px)}
+.swatch.map{background:radial-gradient(circle at 30% 40%,var(--oak) 0 5px,transparent 6px),radial-gradient(circle at 70% 60%,var(--olive) 0 5px,transparent 6px),radial-gradient(circle at 55% 25%,var(--oak) 0 5px,transparent 6px),repeating-linear-gradient(0deg,var(--mute) 0 1px,transparent 1px 16px),repeating-linear-gradient(90deg,var(--mute) 0 1px,transparent 1px 16px)}
+.swatch .dim{display:block}
+
+.btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;text-decoration:none;
+  border:2px solid var(--line);border-radius:12px 9px 13px 8px;padding:6px 16px;background:var(--win);color:var(--ink);cursor:pointer;box-shadow:2px 2px 0 var(--line);align-self:flex-start}
+.btn:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--line)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+
+/* about */
+.profile{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
+@media (max-width:520px){.profile{grid-template-columns:1fr}}
+.avatar{width:120px;max-width:100%;aspect-ratio:1;border:2px solid var(--line);border-radius:50% 46% 52% 48%;background:var(--mute);display:grid;place-items:center;font-size:12px;color:var(--sub)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0;font-size:14px}
+dt{color:var(--sub);font-variant-numeric:tabular-nums}
+dd{margin:0}
+.hidden-later{border:1.5px dashed var(--oak);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+
+/* form */
+form{display:flex;flex-direction:column;gap:12px;max-width:520px}
+label{font-size:13px;font-weight:700;display:flex;flex-direction:column;gap:4px}
+input,textarea,select{font:inherit;font-weight:400;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:6px 8px 5px 7px;padding:8px 10px;width:100%}
+textarea{min-height:120px;resize:vertical}
+
+footer{font-size:12px;color:var(--sub);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+
+.page{display:flex;flex-direction:column;gap:28px}
+@media (prefers-reduced-motion:no-preference){.page{animation:in .35s ease-out}}
+@keyframes in{from{transform:translateY(6px)}to{transform:none}}
