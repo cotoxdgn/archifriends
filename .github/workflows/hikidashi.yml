@@ -1,0 +1,30 @@
+name: 空間ひきだし帖と賞カレンダーを反映
+
+on:
+  schedule:
+    - cron: "7 15 * * *"   # 毎日0:07（日本時間）。予約したカードがその日になったらHPに出る
+  workflow_dispatch: {}     # 手動実行も可
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/fetch_hikidashi.py
+        env:
+          HIKI_GAS_URL: ${{ secrets.HIKI_GAS_URL }}
+      - name: 変更があればコミット
+        run: |
+          if [ -n "$(git status --porcelain data/hikidashi.json data/awards.ics)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/hikidashi.json data/awards.ics
+            git commit -m "空間ひきだし帖・賞カレンダーを反映"
+            git push
+          fi
