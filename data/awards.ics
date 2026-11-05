@@ -7,4 +7,88 @@ X-WR-CALNAME:設計者向け 賞の締切（coo）
 X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:cd91a7fe3a42466e@archifriends.net
+DTSTAMP:20261105T212736Z
+DTSTART;VALUE=DATE:20270514
+DTEND;VALUE=DATE:20270515
+SUMMARY:締切：日本空間デザイン賞（仮）
+DESCRIPTION:【仮】去年と同じ日付で仮に入れています。
+ 公式ページで確かめてください。\nhttps://kukan.design/2710
+ 9/
+URL:https://kukan.design/27109/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1週間後に締切：日本空間デザイン賞
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:479ca54fb37cefe1@archifriends.net
+DTSTAMP:20261105T212736Z
+DTSTART;VALUE=DATE:20270521
+DTEND;VALUE=DATE:20270522
+SUMMARY:締切：グッドデザイン賞（仮）
+DESCRIPTION:【仮】去年と同じ日付で仮に入れています。
+ 公式ページで確かめてください。\nhttps://www.g-mark.org
+URL:https://www.g-mark.org
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1週間後に締切：グッドデザイン賞
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d22ac2ce14042947@archifriends.net
+DTSTAMP:20261105T212736Z
+DTSTART;VALUE=DATE:20270617
+DTEND;VALUE=DATE:20270618
+SUMMARY:締切：住まいのリフォームコンクール（仮）
+DESCRIPTION:【仮】去年と同じ日付で仮に入れています。
+ 公式ページで確かめてください。\nhttps://www.chord.or.jp/r
+ eform_contest/
+URL:https://www.chord.or.jp/reform_contest/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1週間後に締切：住まいのリフォームコンクー
+ ル
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:07ce7f6b8fd28f53@archifriends.net
+DTSTAMP:20261105T212736Z
+DTSTART;VALUE=DATE:20270630
+DTEND;VALUE=DATE:20270701
+SUMMARY:締切：JID AWARD（日本インテリアデザイナー協会
+ ）（仮）
+DESCRIPTION:【仮】去年と同じ日付で仮に入れています。
+ 公式ページで確かめてください。\nhttps://jid-award.com/htm
+ l/detail-2026.html
+URL:https://jid-award.com/html/detail-2026.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1週間後に締切：JID AWARD（日本インテリアデザ
+ イナー協会）
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:59ba46b72fbf24b4@archifriends.net
+DTSTAMP:20261105T212736Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:締切：リノベーション・オブ・ザ・イヤー（仮
+ ）
+DESCRIPTION:【仮】去年と同じ日付で仮に入れています。
+ 公式ページで確かめてください。\nhttps://prtimes.jp/main/h
+ tml/rd/p/000000105.000008586.html
+URL:https://prtimes.jp/main/html/rd/p/000000105.000008586.html
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1週間後に締切：リノベーション・オブ・ザ・
+ イヤー
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
 END:VCALENDAR

@@ -2,5 +2,41 @@
  "name": "coo",
  "updated": "",
  "cards": [],
- "awards": []
+ "awards": [
+  {
+   "name": "日本空間デザイン賞",
+   "url": "https://kukan.design/27109/",
+   "date": "2027-05-14",
+   "tentative": true,
+   "memo": ""
+  },
+  {
+   "name": "グッドデザイン賞",
+   "url": "https://www.g-mark.org",
+   "date": "2027-05-21",
+   "tentative": true,
+   "memo": ""
+  },
+  {
+   "name": "住まいのリフォームコンクール",
+   "url": "https://www.chord.or.jp/reform_contest/",
+   "date": "2027-06-17",
+   "tentative": true,
+   "memo": ""
+  },
+  {
+   "name": "JID AWARD（日本インテリアデザイナー協会）",
+   "url": "https://jid-award.com/html/detail-2026.html",
+   "date": "2027-06-30",
+   "tentative": true,
+   "memo": ""
+  },
+  {
+   "name": "リノベーション・オブ・ザ・イヤー",
+   "url": "https://prtimes.jp/main/html/rd/p/000000105.000008586.html",
+   "date": "2027-08-31",
+   "tentative": true,
+   "memo": ""
+  }
+ ]
 }
