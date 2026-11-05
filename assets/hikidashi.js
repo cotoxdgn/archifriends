@@ -15,7 +15,7 @@
 
   function card(c) {
     const k = K[c.type] || K.item;
-    const imgs = [c.illust, c.photo].filter(okUrl).map(u => `<img src="${esc(u)}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join("");
+    const imgs = (okUrl(c.illust) ? `<img class="il" src="${esc(c.illust)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : "") + (okUrl(c.photo) ? `<img src="${esc(c.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : "");
     const foot = [];
     if (c.type === "law" && c.article) foot.push(`根拠：${esc(c.article)}${c.checked ? ` ／ 最終確認 ${esc(ymd(c.checked))}` : ""}`);
     if (c.type === "rec" && okUrl(c.link)) foot.push(`<a href="${esc(c.link)}" target="_blank" rel="noopener">公式ページ・出典</a>`);

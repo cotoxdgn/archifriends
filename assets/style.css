@@ -115,6 +115,7 @@ footer{font-size:12px;color:var(--sub);display:flex;flex-wrap:wrap;gap:8px 18px;
 .hk-card .kind{font-weight:700;color:var(--k)}
 .hk-card .no{color:var(--sub);font-variant-numeric:tabular-nums}
 .hk-card img{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border:1.5px solid var(--mute);border-radius:6px}
+.hk-card img.il{object-fit:cover;object-position:center;aspect-ratio:16/10}
 .hk-card .q{font-size:13px;color:var(--sub)}
 .hk-card .a{font-size:17px;font-weight:700;line-height:1.5;color:var(--k);overflow-wrap:anywhere}
 .hk-card .b{font-size:14px;overflow-wrap:anywhere}
