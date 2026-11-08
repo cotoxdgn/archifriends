@@ -1,4 +1,4 @@
-# coo
+# coto
 
 archifriends.net のソースです。
 
