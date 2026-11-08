@@ -19,7 +19,7 @@ URL = os.environ.get("HIKI_GAS_URL", "").strip()
 
 def fetch(url):
     body = json.dumps({"action": "hikiPublic"}).encode("utf-8")
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "text/plain;charset=utf-8", "User-Agent": "coo-site-hikidashi/1.0"})
+    req = urllib.request.Request(url, data=body, headers={"Content-Type": "text/plain;charset=utf-8", "User-Agent": "coto-site-hikidashi/1.0"})
     with urllib.request.urlopen(req, timeout=60) as r:   # Apps Script は 302 で返す。urllib が GET でたどる
         return json.loads(r.read().decode("utf-8"))
 
@@ -76,7 +76,7 @@ def main():
     keep = ["no", "type", "date", "from", "to", "phrase", "article", "checked", "link", "note", "illust", "photo", "work"]
     cards = [{k: c.get(k, "") for k in keep} for c in res.get("cards", [])]
     awards = [{k: a.get(k, "") for k in ["name", "url", "date", "tentative", "memo"]} for a in res.get("awards", [])]
-    name = res.get("name") or "coo"
+    name = res.get("name") or "coto"
     data = {"name": name, "updated": res.get("updated", ""), "cards": cards, "awards": awards}
     old = json.loads(OUT_JSON.read_text(encoding="utf-8")) if OUT_JSON.exists() else {}
     if old != data:

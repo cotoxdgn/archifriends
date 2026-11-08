@@ -6,12 +6,12 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
-RSS_URL = "https://note.com/roomin_kurashi/rss"
+RSS_URL = "https://note.com/coto_to_design/rss"
 OUT = Path(__file__).resolve().parent.parent / "data" / "posts.json"
 EXCLUDE = ["自己紹介"]  # タイトルにこの語を含む記事はHPに出さない
 MAX_POSTS = 20
 
-req = urllib.request.Request(RSS_URL, headers={"User-Agent": "coo-site-feed/1.0"})
+req = urllib.request.Request(RSS_URL, headers={"User-Agent": "coto-site-feed/1.0"})
 with urllib.request.urlopen(req, timeout=30) as r:
     root = ET.fromstring(r.read())
 
